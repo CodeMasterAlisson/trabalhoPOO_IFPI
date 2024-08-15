@@ -2,25 +2,25 @@ package Lab01;
 
 public class LampadaTresEstados {
 
-    private boolean estado;
+    private String estado;
 
     public LampadaTresEstados() {
         apagar();
     }
 
     public void apagar(){
-        estado = false;
+        this.estado = "lampada apagada";
     }
 
     public void acender(){
-        estado = true;
+        this.estado = "lampada acesa";
     }
 
-    public String meiaLuz(){
-        return "meia-luz";
+    public void meiaLuz(){
+        this.estado = "Lampada em meia luz";
     }
 
-    public boolean getEstado(){
+    public String getEstado(){
         return estado;
     }
 }
