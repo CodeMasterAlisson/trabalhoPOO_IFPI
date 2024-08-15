@@ -1,7 +1,8 @@
 package Lab06;
 
 public class Empregado {
-    private static final int HORA_NORMAL = 8;
+    
+    private final int HORA_NORMAL = 8;
     private String nome;
     private double valorHoraTrabalho;
     private int totalHorasMes;
@@ -33,7 +34,7 @@ public class Empregado {
     public double calcularSalario(){
         double salario = 0.0;
         if (totalHorasExtrasMes != 0){
-            salario += (totalHorasExtrasMes * valorHoraTrabalho * 1.5) + (8 * valorHoraTrabalho);
+            salario += (totalHorasExtrasMes * valorHoraTrabalho * 1.5) + (HORA_NORMAL * valorHoraTrabalho);
         } else {
             salario = valorHoraTrabalho * totalHorasMes;
         }

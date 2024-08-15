@@ -2,7 +2,7 @@ package Lab05;
 
 public class Empregado {
 
-    private static final int HORA_NORMAL = 8;
+    private final int HORA_NORMAL = 8;
     private String matricula;
     private double valorHoraTrabalho;
     private int totalHoraMes;
@@ -32,7 +32,7 @@ public class Empregado {
         double salario = 0.0;
 
         if (this.totalHorasExtrasMes != 0){
-            salario = 30*((valorHoraTrabalho * 1.5) * totalHoraMes);
+            salario += (totalHorasExtrasMes * valorHoraTrabalho * 1.5) + (HORA_NORMAL * valorHoraTrabalho);
             this.totalHoraMes = 0;
             this.totalHorasExtrasMes = 0;
         } else {
