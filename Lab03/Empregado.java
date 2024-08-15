@@ -16,10 +16,10 @@ public class Empregado {
     public void registrarPonto(int horaChegada, int horaSaida){
         if (horaChegada < horaSaida){
             this.horaDia = (horaChegada - horaSaida);
-            this.totalHoraMes += 30 * (horaSaida - horaChegada);
+            this.totalHoraMes += 30 * horaDia;
         } else {
             this.horaDia = ((24 - horaChegada) + horaSaida);
-            this.totalHoraMes += 30 * (24 - horaChegada + horaSaida);
+            this.totalHoraMes += 30 * horaDia;
         }
     }
 
