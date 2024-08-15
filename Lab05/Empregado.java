@@ -2,7 +2,7 @@ package Lab05;
 
 public class Empregado {
 
-    private final int HORA_NORMAL = 8;
+    private static final int HORA_NORMAL = 8;
     private String matricula;
     private double valorHoraTrabalho;
     private int totalHoraMes;
