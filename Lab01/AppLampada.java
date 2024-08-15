@@ -28,8 +28,8 @@ public class AppLampada {
                     System.out.println(lampada.getEstado());
                     break;
                 case 2:
-                    lampada.meiaLuz();
-                    System.out.println(lampada.meiaLuz());
+                	lampada.meiaLuz();
+                	System.out.println(lampada.getEstado());
                     break;
                case 3:
                     lampada.apagar();
