@@ -25,18 +25,15 @@ public class AppLampada {
            switch (opc) {
                 case 1:
                     lampada.acender();
-                    if(lampada.getEstado()){
-                        System.out.println("Lampada ligada");
-                    }
+                    System.out.println(lampada.getEstado());
                     break;
                 case 2:
+                    lampada.meiaLuz();
                     System.out.println(lampada.meiaLuz());
                     break;
                case 3:
-                   lampada.apagar();
-                   if(!(lampada.getEstado())){
-                       System.out.println("Lampada desligada");
-                   }
+                    lampada.apagar();
+                   System.out.println(lampada.getEstado());
                    break;
                case 4:
                    System.out.println("Programa encerrado!");
