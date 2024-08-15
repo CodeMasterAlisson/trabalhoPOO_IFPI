@@ -12,6 +12,7 @@ public class Empregado {
         this.matricula = matricula;
         this.valorHoraTrabalho = valorHoraTrabalhadaMes;
         this.totalHoraMes = 0;
+        this.totalHorasExtrasMes = 0;
     }
 
     public void registrarPonto(int horaChegada, int horaSaida){
