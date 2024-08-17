@@ -17,22 +17,13 @@ public class LampadaDimerizada {
     }
 
     public void aumentarLuminosidade(){
-        if(getLuminosidade() != 0){
-            luminosidade+=10;
-            System.out.println("Luminosidade aumentada em " + luminosidade + "%");
-        } else {
-            System.out.println("Lâmpada não está ligada");
-        }
+        this.luminosidade += 10;
     }
 
     public void diminuirLuminosidade(){
-        if(getLuminosidade() != 0){
-            luminosidade-=10;
-            System.out.println("Luminosidade diminuída em " + luminosidade + "%");
-        } else {
-            System.out.println("Lâmpada não está ligada");
-        }
+        this.luminosidade -= 10;
     }
+    
     public int getLuminosidade() {
         return luminosidade;
     }
