@@ -38,13 +38,13 @@ public class Empregado {
             salario = this.totalHoraMes * this.valorHoraTrabalho;
             adicional = this.totalHorasExtrasMes * this.valorHoraTrabalho * 1.5;
             salarioLiquido = salario + adicional;
-            this.totalHoraMes=0;
-            this.totalHorasExtrasMes=0;
-            return salarioLiquido;
-        } 
+        } else {
+            salarioLiquido = this.totalHoraMes * this.valorHoraTrabalho;
+        }
         this.totalHoraMes=0;
         this.totalHorasExtrasMes=0;
-        return salarioLiquido = this.totalHoraMes * this.valorHoraTrabalho;
+        
+        return salarioLiquido;
     }
 
     public String getMatricula() {
