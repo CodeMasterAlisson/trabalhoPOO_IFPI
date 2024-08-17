@@ -1,66 +1,44 @@
 package Lab03;
 
-import java.util.Scanner;
-
 public class AppEmpregado {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        Empregado empregado = null;
-        int op, horaInicial, horaFinal;
-        String matricula;
-        double valor;
+        // QUESTÃO 03 e 04
+        Empregado empregado = new Empregado("2024001", 8.50);
 
-        do {
-            System.out.println("\t CONTROLE DE PAGAMENTO");
-            System.out.println("\t 1 - Cadastrar Empregado");
-            System.out.println("\t 2 - Registrar Ponto");
-            System.out.println("\t 3 - Calcular salário");
-            System.out.println("\t 4 - Fechar Programa");
-            System.out.print("Entre com sua opção: ");
-            op = sc.nextInt();
+        empregado.registrarPonto(8, 16);
+        System.out.printf("\n Total hora normal mes: %d", empregado.getTotalHoraMes());
+        System.out.printf("\n Total hora extra mes: %d", empregado.getTotalHorasExtrasMes());
+        System.out.printf("\n Primeiro salário do mês R$ %,3.2f \n", empregado.calcularSalario());
+        System.out.printf("\n Salario zerado apos novo calculo R$ %.2f \n", empregado.calcularSalario());
+        
+        
+        empregado.registrarPonto(7, 17); 
+        // aqui gera um novo salário ao chamar o metodo calcular
 
-            switch (op) {
-                case 1:
-                    System.out.println("Entre com a matrícula: ");
-                    matricula = sc.next();
-                    System.out.println("Entre com a valor: ");
-                    valor = sc.nextDouble();
-                    empregado = new Empregado(matricula,valor);
-                    System.out.println("Empregado de matricula " + empregado.getMatricula() + " cadastrado com sucesso!");
-                    break;
+        // testando o metodo transferencia de horas
 
-                case 2:
-                    if (empregado != null){
-                        System.out.println("Entre com a hora inicial: ");
-                        horaInicial = sc.nextInt();
-                        System.out.println("Entre com a hora final: ");
-                        horaFinal = sc.nextInt();
-                        empregado.registrarPonto(horaInicial, horaFinal);
-                        System.out.printf("\n\tRegistro de horas\n");
-                        System.out.printf("Matricula: %s | tenpo: %d horas/mês | %d hora/dia\n\n", empregado.getMatricula(), empregado.getTotalHoraMes(), empregado.getHoraDia());
-                    } else {
-                        System.out.println("Não há empregado cadastrado!");
-                    }
-                    break;
+        Empregado empregadoJoao = new Empregado("20247008", 8.50);
+        Empregado empregadaJulia = new Empregado("20247008", 8.50);
 
-                case 3:
-                    if (empregado != null){
-                        System.out.printf("\n\tFolha de Pagamento\n");
-                        System.out.printf("Matrícula: %s | Salário: R$ %,.2f\n", empregado.getMatricula(), empregado.calcularSalario());
-                    } else {
-                        System.out.println("Não há empregado cadastrado!");
-                    }
-                    break;
+        empregadoJoao.registrarPonto(8, 15);
+        empregadaJulia.registrarPonto(8, 12);
 
-                case 4:
-                    System.out.println("Programa Encerrado!");
-                    break;
+        System.out.printf("\n Empregado João %d horas normais ", empregadoJoao.getTotalHoraMes());
+        System.out.printf("\n Empregado João %d horas extras ", empregadoJoao.getTotalHorasExtrasMes());
+        System.out.printf("\n Empregado João: Total de horas %d  \n", empregadoJoao.getTotalHoraMes() + empregadoJoao.getTotalHorasExtrasMes());
 
-                default:
-                    System.out.println("Opção inválida!");
-            }
-        } while (op != 4);
+        System.out.printf("\n Empregada Julia %d horas normais ", empregadaJulia.getTotalHoraMes());
+        System.out.printf("\n Empregada Julia %d horas extras ", empregadaJulia.getTotalHorasExtrasMes());
+        System.out.printf("\n Empregada Julia: Total de horas %d  \n", empregadaJulia.getTotalHoraMes() + empregadaJulia.getTotalHorasExtrasMes());
+
+        empregadoJoao.transferirHoras(10, empregadaJulia);
+        System.out.printf("\n Hora atualizada - Empregado Joao %d ", empregadoJoao.getTotalHoraMes());
+        System.out.printf("\n Hora atualizada - Empregada Julia  %d \n\n", empregadaJulia.getTotalHoraMes());
+
+        System.out.println(" Empregado Joao R$ " + empregadoJoao.calcularSalario());
+        System.out.println(" Empegada Julia R$ " + empregadaJulia.calcularSalario());
+
     }
 }
