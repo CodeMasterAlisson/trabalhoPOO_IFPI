@@ -51,8 +51,8 @@ public class Empregado {
         double salarioComHorasExtras=0.0;
         double salarioLiquido = 0.0;
         if (this.totalHorasExtrasMes != 0){
-            salario = this.totalHoraMes * this.valorHoraTrabalho;
-            adicional = this.totalHorasExtrasMes * this.valorHoraTrabalho * 1.5;
+            salarioNormal = this.totalHoraMes * this.valorHoraTrabalho;
+            salarioComHorasExtras = this.totalHorasExtrasMes * this.valorHoraTrabalho * 1.5;
             salarioLiquido = salarioNormal + salarioComHorasExtras;
         } else {
             salarioLiquido = this.totalHoraMes * this.valorHoraTrabalho;
