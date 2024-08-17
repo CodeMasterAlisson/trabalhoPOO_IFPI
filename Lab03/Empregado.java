@@ -47,13 +47,13 @@ public class Empregado {
     }
 
     public double calcularSalario(){
-        double salario=0.0;
-        double adicional=0.0;
+        double salarioNormal=0.0;
+        double salarioComHorasExtras=0.0;
         double salarioLiquido = 0.0;
         if (this.totalHorasExtrasMes != 0){
             salario = this.totalHoraMes * this.valorHoraTrabalho;
             adicional = this.totalHorasExtrasMes * this.valorHoraTrabalho * 1.5;
-            salarioLiquido = salario + adicional;
+            salarioLiquido = salarioNormal + salarioComHorasExtras;
         } else {
             salarioLiquido = this.totalHoraMes * this.valorHoraTrabalho;
         }
