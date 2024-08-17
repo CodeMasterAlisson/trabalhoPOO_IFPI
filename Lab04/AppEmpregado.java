@@ -39,7 +39,8 @@ public class AppEmpregado {
                         horaFinal = sc.nextInt();
                         empregado.registrarPonto(horaInicial, horaFinal);
                         System.out.printf("\n\tRegistro de horas\n");
-                        System.out.printf("Matricula: %s | tenpo: %d horas/mês \n\n", empregado.getMatricula(), empregado.getTotalHoraMes());
+                        System.out.printf("Matricula: %s | tempo: %d horas/dia \n\n", empregado.getMatricula(), empregado.getTotalHoraMes());
+                        System.out.println("e " + empregado.getTotalHorasExtrasMes() + " horas extras");
                     } else {
                         System.out.println("Não há empregado cadastrado!");
                     }
@@ -59,7 +60,7 @@ public class AppEmpregado {
                     break;
 
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("Opção inválida! Tente novamente");
             }
         } while (op != 4);
     }
